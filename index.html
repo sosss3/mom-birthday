@@ -3,71 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для мамы</title>
+    <title>Для самой лучшей мамы</title>
     <style>
+        /* Основной фон с градиентом */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #000000; /* Глубокий черный фон /
-            font-family: sans-serif;
-            color: #ffffff; / Чисто белый текст /
-            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            overflow: hidden;
         }
+
         .container {
+            text-align: center;
+            z-index: 10;
             padding: 20px;
-            max-width: 400px;
         }
-        button {
-            padding: 20px 40px;
+
+        /* Стильная кнопка */
+        .main-button {
+            padding: 18px 45px;
             font-size: 20px;
             cursor: pointer;
-            background-color: #00ff41; / Яркий зеленый */
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
             border: none;
-            border-radius: 12px;
-            color: #000000;
+            border-radius: 50px;
+            color: white;
             font-weight: bold;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
-            transition: 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
         }
-        button:hover {
-            transform: scale(1.1);
-            background-color: #05ffbc;
+
+        .main-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 219, 222, 0.4);
         }
+
+        /* Карточка с поздравлением (эффект стекла) */
         #message {
             display: none;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            max-width: 500px;
+            animation: slideUp 0.8s ease-out;
         }
-        h1 { color: #00ff41; margin-bottom: 10px; }
-        p { font-size: 20px; line-height: 1.6; color: #ffffff; }
+
+        h1 {
+            background: linear-gradient(45deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Анимация появления */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Украшение: плавающие круги на фоне */
+        .circle {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(0, 219, 222, 0.1), rgba(252, 0, 255, 0.1));
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(30px);
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div id="start-screen">
-        <button onclick="showMessage()">ОТКРЫТЬ СООБЩЕНИЕ</button>
-    </div>
+    <div class="circle" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+    <div class="circle" style="width: 200px; height: 200px; bottom: -50px; right: -50px;"></div>
 
-    <div id="message">
-        <h1>С днем рождения!</h1>
-        <p>Мам, ты самая лучшая! <br> 
-        Спасибо за твою поддержку и доброту. <br>
-        Пусть каждый день будет крутым! 🚀</p>
-    </div>
-</div>
-
-<script>
-    function showMessage() {
-        document.getElementById('start-screen').style.display = 'none';
-        document.getElementById('message').style.display = 'block';
-    }
-</script>
-
-</body>
-</html>
+    <div class="container">
+        <div id="start-screen">
+            <button class="main-button" onclick="showMessage
