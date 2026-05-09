@@ -11,54 +11,54 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #121212; /* Темный фон, чтобы не «кринжово» /
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white;
+            background-color: #000000; /* Глубокий черный фон /
+            font-family: sans-serif;
+            color: #ffffff; / Чисто белый текст /
             text-align: center;
         }
         .container {
             padding: 20px;
+            max-width: 400px;
         }
         button {
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 20px 40px;
+            font-size: 20px;
             cursor: pointer;
-            background-color: #00ff41; / Зеленый «хакерский» цвет /
+            background-color: #00ff41; / Яркий зеленый */
             border: none;
-            border-radius: 5px;
-            color: black;
+            border-radius: 12px;
+            color: #000000;
             font-weight: bold;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
             transition: 0.3s;
         }
         button:hover {
-            background-color: #00cc33;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            background-color: #05ffbc;
         }
         #message {
-            display: none; / Сначала скрыто */
-            margin-top: 30px;
-            font-size: 24px;
-            line-height: 1.5;
-            animation: fadeIn 1s;
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        h1 { color: #00ff41; margin-bottom: 10px; }
+        p { font-size: 20px; line-height: 1.6; color: #ffffff; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div id="start-screen">
-        <button onclick="showMessage()">Запустить поздравление.exe</button>
+        <button onclick="showMessage()">ОТКРЫТЬ СООБЩЕНИЕ</button>
     </div>
 
     <div id="message">
         <h1>С днем рождения!</h1>
-        <p>Мам, ты самый лучший человек в моей жизни. <br> 
-        Спасибо за всё, что ты делаешь. <br>
-        Оставайся такой же крутой! 🚀</p>
+        <p>Мам, ты самая лучшая! <br> 
+        Спасибо за твою поддержку и доброту. <br>
+        Пусть каждый день будет крутым! 🚀</p>
     </div>
 </div>
 
@@ -71,6 +71,3 @@
 
 </body>
 </html>
-﻿
-Infernolius ᛋᛋ
-riz9013
