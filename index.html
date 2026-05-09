@@ -2,70 +2,88 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Для мамы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для любимой мамы</title>
     <style>
-        /* Убираем все отступы и фиксируем фон */
-        html, body {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0f172a;
-            color: white;
-            font-family: sans-serif;
-        }
-
-        /* Центрируем всё через старый добрый Flex */
-        .wrapper {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Розовый градиент */
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100%;
+            font-family: 'Arial Black', sans-serif;
             text-align: center;
+            overflow: hidden;
         }
 
+        .container {
+            width: 90%;
+        }
+
+        /* Огромная кнопка */
         .btn {
-            background: #00f2fe;
-            color: #000;
-            border: none;
-            padding: 25px 50px;
-            font-size: 24px;
+            background-color: #ff477e;
+            color: white;
+            border: 5px solid white;
+            padding: 30px 50px;
+            font-size: 35px; /* Очень крупно */
             font-weight: bold;
-            border-radius: 10px;
-            display: block; /* Гарантируем видимость */
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-transform: uppercase;
         }
 
+        /* Блок с поздравлением */
         #message {
             display: none;
-            padding: 20px;
-            width: 80%;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 30px;
+            border: 8px solid #ff477e;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            animation: pop 0.5s ease;
         }
 
-        h1 { font-size: 32px; color: #00f2fe; }
-        p { font-size: 22px; line-height: 1.4; }
+        h1 {
+            font-size: 50px; /* Гигантский заголовок */
+            color: #ff477e;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            font-size: 30px; /* Очень крупный текст */
+            color: #333;
+            line-height: 1.3;
+            margin: 10px 0;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <button class="btn" id="mainBtn" onclick="show()">НАЖМИ НА МЕНЯ</button>
+    <div class="container">
+        <button class="btn" id="mainBtn" onclick="show()">НАЖМИ ТУТ</button>
 
         <div id="message">
-            <h1>С Днём Рождения!</h1>
-            <p>Аникай, ты самая лучшая! ❤️</p>
-            <p>Очень тебя люблю! 🚀</p>
+            <h1>С ДНЁМ РОЖДЕНИЯ!</h1>
+            <p>АНИКАЙ, ТЫ САМАЯ ЛУЧШАЯ! ❤️</p>
+            <p>ЛЮБЛЮ ТЕБЯ! 🌸</p>
         </div>
     </div>
 
     <script>
         function show() {
-            // Прямой метод скрытия/показа без лишних эффектов
             document.getElementById('mainBtn').style.display = 'none';
             document.getElementById('message').style.display = 'block';
         }
     </script>
+
 </body>
 </html>
